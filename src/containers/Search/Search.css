@@ -1,0 +1,37 @@
+.search-wrapper {
+    display: flex;
+}
+
+.star-wars-logo {
+    max-width: 320px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 76px;
+    margin-bottom: 80px;
+}
+
+.table-head {
+    background-color: lightgray;
+}
+.table-body {
+    background-color: white;
+}
+.table-responsive {
+    margin-top: 20px
+}
+.planet-name {
+    overflow-wrap: break-word;
+}
+.logout {
+    float: right;
+}
+.planets {
+    text-align: center;
+    border-radius: 7px;
+    cursor: pointer;
+     margin: 5px;
+     border: 1px solid white;
+}
+.username {
+    color: #ffbb33;
+}
