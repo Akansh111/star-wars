@@ -6,3 +6,9 @@
 .my-3 {
     text-align: center
 }
+.copyright {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    padding-top: 35px;
+}

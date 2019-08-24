@@ -10,15 +10,17 @@ class Search extends React.Component {
     super(props);
     this.state = {
       searchResults: [],
-      planetInfo: {}
+      planetInfo: {},
+      showLoader: false
     }
   }
 
   handleSearch = (e) => {
     if (e.target.value !== '') {
+      this.setState({ showLoader: true })
       axios.get(`${BASE_URL}planets/?search=${e.target.value}`)
         .then(res => {
-          this.setState({ searchResults: res.data.results })
+          this.setState({ searchResults: res.data.results, showLoader: false })
         })
     } else {
       this.setState({ searchResults: [], planetInfo: {} });
@@ -45,13 +47,20 @@ class Search extends React.Component {
         <input type="text" id="example1" onChange={this.handleSearch} className="form-control form-control-lg" placeholder="Search Planet... (e.g. 'Ald')" />
         <div className="search-wrapper">
           {
+            this.state.showLoader ? 
+            <div className="spinner-border loader-color" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+             : ''
+          }
+          {
             this.state.searchResults.length ?
               this.state.searchResults.map((item) => {
                 let x = Math.floor(Math.random() * 256);
                 let y = Math.floor(Math.random() * 256);
                 let z = Math.floor(Math.random() * 256);
                 let bgColor = "rgb(" + x + "," + y + "," + z + ")";
-                return <div className="planets" style={{ backgroundColor: bgColor, width: `${item.population * 0.00000001 + 60}px`}} onClick={() => this.showInfo(item)} >
+                return <div className="planets" style={{ backgroundColor: bgColor, width: `${item.population * 0.00000001 + 60}px` }} onClick={() => this.showInfo(item)} >
                   <div className="planet-name">{item.name}</div>
                 </div>
               })

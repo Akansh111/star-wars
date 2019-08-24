@@ -35,3 +35,8 @@
 .username {
     color: #ffbb33;
 }
+.loader-color{
+    color: white;
+    margin: 0 auto;
+    margin-top: 20px;
+}

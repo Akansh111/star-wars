@@ -110,8 +110,8 @@ class Login extends React.Component {
                     </MDBBtn>
                     {
                         this.state.showLoader ?
-                          <div class="spinner-border" role="status">
-                            <span class="sr-only">Loading...</span>
+                          <div className="spinner-border" role="status">
+                            <span className="sr-only">Loading...</span>
                           </div>
                           : ''}
                   </div>
@@ -121,6 +121,7 @@ class Login extends React.Component {
             </MDBCard>
           </MDBCol>
         </div>
+        <div class="copyright" >Copyright &#169; Akansh Goel. All rights reserved.</div>     
       </MDBContainer>
     );
   }
