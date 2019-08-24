@@ -33,7 +33,7 @@ class Search extends React.Component {
   }
 
   handleLogout = () => {
-    this.props.history.push("/login");
+    this.props.history.push("/");
   }
   render() {
     let username = localStorage.getItem('username')

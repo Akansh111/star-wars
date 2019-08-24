@@ -12,7 +12,7 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 const routing = (
         <Router>
             <div>
-                <Route path="/login" component={Login} />
+                <Route exact path="/" component={Login} />
                 <Route path="/search" component={Search} />
             </div>
         </Router>
