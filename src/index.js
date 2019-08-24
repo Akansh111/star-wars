@@ -10,7 +10,7 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 
 
 const routing = (
-        <Router>
+        <Router history={history} basename={process.env.PUBLIC_URL}>
             <div>
                 <Route exact path="/" component={Login} />
                 <Route path="/search" component={Search} />
